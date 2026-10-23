@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .calculator {
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>Calculator</h1>
+
+        <form method="POST" action="/calculator">
+
+            <input type="number"
+                   step="any"
+                   name="a"
+                   placeholder="Enter first number"
+                   required>
+
+            <br>
+
+            <input type="number"
+                   step="any"
+                   name="b"
+                   placeholder="Enter second number"
+                   required>
+
+            <br>
+
+            <button type="submit" name="operation" value="+">
+                +
+            </button>
+
+            <button type="submit" name="operation" value="-">
+                -
+            </button>
+
+            <button type="submit" name="operation" value="*">
+                ×
+            </button>
+
+            <button type="submit" name="operation" value="/">
+                ÷
+            </button>
+
+        </form>
+
+        <div class="result">
+
+            <h3>Result: {{ result }}</h3>
+
+        </div>
+
+        <br>
+
+        <a href="/">
+            Back to Home
+        </a>
+
+    </div>
+
+</body>
+
+</html>
